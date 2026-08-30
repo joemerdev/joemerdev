@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { site } from '$lib/site';
+
 	let mobileOpen = $state(false);
 	let activeFilter = $state('All');
 	let toast = $state<string | null>(null);
@@ -167,8 +169,95 @@
 </script>
 
 <svelte:head>
-	<title>Joemer Dev — Web Developer Portfolio</title>
-	<meta name="description" content="Web developer portfolio — engineering web experiences with systems thinking. Full-stack, design systems, performance. Manila · Remote." />
+	<!-- Primary -->
+	<title>{site.title}</title>
+	<meta name="title" content={site.title} />
+	<meta name="description" content={site.description} />
+	<meta name="keywords" content={site.keywords.join(', ')} />
+	<meta name="author" content={site.author} />
+	<meta name="creator" content={site.author} />
+	<meta name="publisher" content={site.author} />
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+	<meta name="googlebot" content="index, follow" />
+	<meta name="theme-color" content={site.themeColor} />
+	<link rel="canonical" href={site.siteUrl + '/'} />
+	<link rel="author" href={site.siteUrl + '/humans.txt'} />
+	<meta name="application-name" content={site.titleShort} />
+	<meta name="apple-mobile-web-app-title" content={site.titleShort} />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content={site.titleShort} />
+	<meta property="og:locale" content={site.locale} />
+	<meta property="og:url" content={site.siteUrl + '/'} />
+	<meta property="og:title" content={site.title} />
+	<meta property="og:description" content={site.description} />
+	<meta property="og:image" content={site.ogImage} />
+	<meta property="og:image:alt" content={site.ogImageAlt} />
+	<meta property="og:image:width" content={site.ogImageWidth} />
+	<meta property="og:image:height" content={site.ogImageHeight} />
+	<meta property="og:image:type" content="image/jpeg" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content={site.twitterHandle} />
+	<meta name="twitter:creator" content={site.twitterHandle} />
+	<meta name="twitter:title" content={site.title} />
+	<meta name="twitter:description" content={site.description} />
+	<meta name="twitter:image" content={site.ogImage} />
+	<meta name="twitter:image:alt" content={site.ogImageAlt} />
+
+	<!-- Verification (populate in src/lib/site.ts) -->
+	{#if site.verification.google}
+		<meta name="google-site-verification" content={site.verification.google} />
+	{/if}
+
+	<!-- JSON-LD: Person + WebSite + ProfessionalService -->
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'WebSite',
+				'@id': site.siteUrl + '/#website',
+				url: site.siteUrl + '/',
+				name: site.title,
+				description: site.description,
+				publisher: { '@id': site.siteUrl + '/#person' },
+				inLanguage: site.locale,
+				isFamilyFriendly: true
+			},
+			{
+				'@type': 'Person',
+				'@id': site.siteUrl + '/#person',
+				name: site.person.name,
+				url: site.siteUrl + '/',
+				jobTitle: site.person.jobTitle,
+				description: site.description,
+				address: {
+					'@type': 'PostalAddress',
+					addressLocality: site.person.addressLocality,
+					addressCountry: site.person.addressCountry
+				},
+				email: 'mailto:' + site.email,
+				sameAs: [site.github, site.linkedin],
+				knowsAbout: site.keywords,
+				image: site.ogImage
+			},
+			{
+				'@type': 'ProfessionalService',
+				'@id': site.siteUrl + '/#service',
+				name: site.titleShort + ' — Web Development Studio',
+				url: site.siteUrl + '/',
+				provider: { '@id': site.siteUrl + '/#person' },
+				areaServed: { '@type': 'Country', name: 'Worldwide' },
+				availableLanguage: ['en'],
+				serviceType: ['Frontend Architecture', 'Backend Systems', 'Design Systems', 'Performance Engineering'],
+				description: site.description
+			}
+		]
+	})}</script>`}
 </svelte:head>
 
 <!-- TOAST -->

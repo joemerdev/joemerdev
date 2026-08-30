@@ -1,0 +1,20 @@
+/* TEAM */
+  Developer: Joemer Dev
+  Role: Web Developer — Full-Stack · Design Systems · Performance
+  Location: Manila, PH — Remote worldwide (UTC+8)
+  Contact: hello@joemer.dev
+  Site: https://joemer.dev
+  From: Philippines
+
+/* THANKS */
+  Design system: NVIDIA marketing system (design.md) — single accent #76b900, 2px radius, hairline borders
+  Typography: Inter (NVIDIA-EMEA fallback) — 12-tier hierarchy
+  Stack: SvelteKit 2 + Svelte 5 (runes) + Tailwind CSS 4 + TypeScript
+
+/* SITE */
+  Standards: HTML5, CSS3, WCAG AA (44×44px targets), semantic headings
+  Components: hero-card-dark, product-card, feature-card, resource-card, callout-stat, pill-tab, corner-square
+  Last update: 2026-08-30
+  Language: en_PH
+  Doctype: HTML5
+  Ideology: Systems over pages. Tokens over one-offs. One accent does all the work.
