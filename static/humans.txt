@@ -1,13 +1,13 @@
 /* TEAM */
-  Developer: Joemer Dev
-  Role: Web Developer — Full-Stack · Design Systems · Performance
+  Designer: Joemer Dev
+  Role: Web Designer — UI/UX · Brand & Digital Product
   Location: Manila, PH — Remote worldwide (UTC+8)
   Contact: hello@joemer.dev
   Site: https://joemer.dev
   From: Philippines
 
 /* THANKS */
-  Design system: NVIDIA marketing system (design.md) — single accent #76b900, 2px radius, hairline borders
+  Design system: Re-themed NVIDIA (design.md) — navy #0a192f / white / black, 2px radius, hairline borders
   Typography: Inter (NVIDIA-EMEA fallback) — 12-tier hierarchy
   Stack: SvelteKit 2 + Svelte 5 (runes) + Tailwind CSS 4 + TypeScript
 

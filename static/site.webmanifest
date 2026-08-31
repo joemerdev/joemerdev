@@ -1,16 +1,16 @@
 {
-  "name": "Joemer Dev — Web Developer Portfolio",
-  "short_name": "Joemer Dev",
-  "description": "Systems-minded web developer in Manila. SvelteKit, TypeScript, Next.js & Postgres. 48 projects shipped, 98 avg Lighthouse.",
+  "name": "Joemer Oclarit — Front-End Developer",
+  "short_name": "JO",
+  "description": "Joemer Oclarit — fast, responsive & visually polished interfaces. SvelteKit & Vue.js. Bislig City, Philippines — remote worldwide.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#76b900",
+  "background_color": "#070a12",
+  "theme_color": "#0f2a44",
   "lang": "en",
   "dir": "ltr",
   "orientation": "any",
-  "categories": ["developer", "portfolio", "business"],
+  "categories": ["design", "portfolio", "business"],
   "icons": [
     {
       "src": "/favicon.svg",
@@ -35,7 +35,7 @@
     {
       "name": "Selected Work",
       "url": "/#work",
-      "description": "6 shipped builds — filter by Frontend / Full Stack / Design System"
+      "description": "6 shipped — filter by UI/UX / Brand / Web Design"
     },
     {
       "name": "Contact",
