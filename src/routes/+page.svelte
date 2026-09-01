@@ -138,9 +138,9 @@
 		}
 		isSending = true;
 		try {
-			// Primary: FormSubmit AJAX — delivers directly to Oclaritjoemer@gmail.com (no backend needed)
+			// Primary: FormSubmit AJAX — delivers directly to joemer.oclarit@gmail.com (no backend needed)
 			// First submission requires one-time verification click sent to that inbox — check spam.
-			const res = await fetch('https://formsubmit.co/ajax/Oclaritjoemer@gmail.com', {
+			const res = await fetch('https://formsubmit.co/ajax/joemer.oclarit@gmail.com', { 
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
 				body: JSON.stringify({
@@ -155,14 +155,14 @@
 			});
 			const data = await res.json().catch(() => ({}));
 			if (!res.ok || data.success === 'false') throw new Error(data.message || 'Send failed');
-			showToast(`Thanks, ${name} — message sent to Oclaritjoemer@gmail.com!`);
+			showToast(`Thanks, ${name} — message sent to joemer.oclarit@gmail.com!`);
 			form.reset();
 		} catch (err) {
 			console.error(err);
 			// Fallback: open mail client with prefilled mailto so you never lose the lead
 			const subject = encodeURIComponent(`Portfolio inquiry from ${name} — ${project || 'General'}`);
 			const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nProject: ${project || 'Not specified'}\n\nMessage:\n${message}\n`);
-			window.location.href = `mailto:Oclaritjoemer@gmail.com?subject=${subject}&body=${body}`;
+			window.location.href = `mailto:joemer.oclarit@gmail.com?subject=${subject}&body=${body}`;
 			showToast(`Could not auto-send — opening your mail app for ${email}.`);
 		} finally {
 			isSending = false;
